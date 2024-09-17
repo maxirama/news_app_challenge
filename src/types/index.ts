@@ -13,7 +13,11 @@ export interface IArticle {
 }
 
 export interface INewsApiResponse {
-  status: string;
+  status: "loading" | "error" | "idle";
   totalResults: number;
   articles: IArticle[];
+}
+
+export interface INewsSlice {
+  newsData: INewsApiResponse;
 }

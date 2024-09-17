@@ -1,43 +1,41 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchCount } from "./newsAPI";
-import { INewsApiResponse } from "../types";
+import { INewsSlice } from "../types";
 
 // Define the initial value for the slice state
-const initialState: INewsApiResponse = {
-  articles: [],
-  totalResults: 0,
-  status: "idle",
+const initialState: INewsSlice = {
+  newsData: {
+    articles: [],
+    totalResults: 0,
+    status: "idle",
+  },
 };
-
 
 export const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
-    setArticles: (state,action) => {
-      state.articles = action.payload;
-    },
-    setTotalResults: (state,action) => {
-      state.totalResults = action.payload;
+    setNewsData: (state, action) => {
+      state.newsData = action.payload;
     },
   },
 
-  extraReducers: (builder) => {
-    builder
-      .addCase(incrementAsync.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = "idle";
-      })
-      .addCase(incrementAsync.rejected, (state) => {
-        state.status = "failed";
-      });
-  },
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(incrementAsync.pending, (state) => {
+  //       state.status = "loading";
+  //     })
+  //     .addCase(incrementAsync.fulfilled, (state, action) => {
+  //       state.status = "idle";
+  //     })
+  //     .addCase(incrementAsync.rejected, (state) => {
+  //       state.status = "failed";
+  //     });
+  // },
 });
 
 // Export the generated action creators for use in components
-export const { setArticles, setTotalResults } = newsSlice.actions;
+export const { setNewsData } = newsSlice.actions;
 export default newsSlice.reducer;
 
 export const incrementAsync = createAsyncThunk(
