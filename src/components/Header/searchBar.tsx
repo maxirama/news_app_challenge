@@ -1,8 +1,14 @@
 import { useState } from "react";
 
-const SearchBar = () => {
-  const [searchValue, setSearchValue] = useState("");
+interface SearchBarProps {
+  searchValue: string;
+  setSearchValue: Function;
+}
 
+const SearchBar: React.FC<SearchBarProps> = ({
+  searchValue,
+  setSearchValue,
+}) => {
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
     console.log(searchValue);

@@ -1,18 +1,14 @@
 import { fetchNews } from "../../services/api";
-import { useDispatch } from "react-redux";
 import { setNewsData } from "../../features/newsSlice";
 import { INewsApiResponse } from "../../types";
 
-const SearchButton = () => {
-  const dispatch = useDispatch();
+interface SearchButtonProps {
+  onNewsSearch: any;
+}
 
-  const handleSearch = async (e: any) => {
-    const _newsData: INewsApiResponse = await fetchNews();
-    dispatch(setNewsData(_newsData));
-  };
-
+const SearchButton: React.FC<SearchButtonProps> = ({ onNewsSearch }) => {
   return (
-    <button type="button" onClick={handleSearch}>
+    <button type="button" onClick={onNewsSearch}>
       Buscar
     </button>
   );
