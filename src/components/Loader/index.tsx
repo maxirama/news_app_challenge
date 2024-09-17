@@ -1,0 +1,8 @@
+import React from "react";
+
+export const Loader = () => {
+  return (<div>'Cargando'</div>)
+};
+
+
+export default Loader;

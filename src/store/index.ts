@@ -1,10 +1,10 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { configureStore } from "@reduxjs/toolkit"
-import counterReducer from "../features/newsSlice"
+import newsReducer from "../features/newsSlice"
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    news: newsReducer,
   },
 })
 
