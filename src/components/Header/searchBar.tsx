@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
-import type { RootState } from "../../store";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
-  const articulos = useSelector((state: RootState) => state.news.newsData);
-  const dispatch = useDispatch();
 
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);

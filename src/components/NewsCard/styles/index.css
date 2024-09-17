@@ -1,0 +1,10 @@
+.news-card {
+  background-color: aqua;
+  width: 20vw;
+  height: 10vh;
+}
+
+.card-img {
+  width: 50px;
+  height: 50px;
+}

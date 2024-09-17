@@ -1,12 +1,17 @@
 import { IArticle } from "../../types";
+import "./styles/index.css";
 
-const NewsCard = (article: IArticle) => {
+interface NewsCardProps {
+  article: IArticle;
+}
+
+const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   return (
-    <div>
-      <p>Titulo de la Tarjeta</p>
-      <p>Por: autor</p>
-      <img src="https://media.wired.com/photos/66e35f14e7fd2f784bb46ecc/191:100/w_1280,c_limit/Security_Apple_Password_Manager_GettyImages-1618511059.jpg" />
-      <p>Fecha: 29/08/07 </p>
+    <div className="news-card">
+      <p>{`${article.title}`}</p>
+      <p>Por: {`${article.author}`}</p>
+      <img className="card-img" src={`${article.urlToImage}`} />
+      <p>{`${article.description}`}: 29/08/07 </p>
     </div>
   );
 };
