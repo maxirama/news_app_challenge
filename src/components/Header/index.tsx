@@ -3,6 +3,7 @@ import SearchButton from "./searchButton";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchNewsData } from "../../features/newsSlice";
+import Pagination from "../Pagination";
 
 const Header = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -20,8 +21,10 @@ const Header = () => {
       <div>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <SearchButton onNewsSearch={onNewsSearch} />
+        <Pagination />
       </div>
     </header>
   );
 };
+
 export default Header;

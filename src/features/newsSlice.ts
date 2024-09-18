@@ -9,6 +9,8 @@ const initialState: INewsSlice = {
     totalResults: 0,
     status: "idle",
   },
+  selectedArticle: {},
+  noResultsObtained: false,
 };
 
 export const fetchNewsData = createAsyncThunk(
@@ -30,26 +32,30 @@ export const newsSlice = createSlice({
     setNewsData: (state, action) => {
       state.newsData = action.payload;
     },
+    setSelectedArticle: (state, action) => {
+      state.selectedArticle = action.payload;
+    },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchNewsData.pending, (state) => {
+        state.noResultsObtained = false;
         state.newsData.status = "loading";
-        console.log("prueba");
       })
       .addCase(fetchNewsData.fulfilled, (state, action) => {
         state.newsData = action.payload;
+        if (action.payload.totalResults === 0) {
+          state.noResultsObtained = true;
+        }
         state.newsData.status = "idle";
-        console.log("buena peticion");
       })
       .addCase(fetchNewsData.rejected, (state) => {
+        state.noResultsObtained = false;
         state.newsData.status = "failed";
-        console.log("falló");
       });
   },
 });
 
 // Export the generated action creators for use in components
-export const { setNewsData } = newsSlice.actions;
+export const { setNewsData, setSelectedArticle } = newsSlice.actions;
 export default newsSlice.reducer;

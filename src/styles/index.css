@@ -5,8 +5,6 @@
 
 .App {
   background-color: gray;
-  max-width: 1024px;
-  max-height: 1024px;
   width: 100%;
   height: 100vh; /* Esto hace que ocupe toda la altura de la ventana */
   margin: auto; /* Centra horizontalmente */
@@ -22,4 +20,31 @@ input {
   height: 3vh;
   margin: 1vh;
   padding: 2px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Gap between grid items */
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column for mobile screens */
+  }
 }

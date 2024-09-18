@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface SearchBarProps {
   searchValue: string;
   setSearchValue: Function;
@@ -14,13 +12,20 @@ const SearchBar: React.FC<SearchBarProps> = ({
     console.log(searchValue);
   };
 
+  const handleClear = () => {
+    setSearchValue("");
+  };
+
   return (
-    <input
-      type="text"
-      onChange={handleChange}
-      value={searchValue}
-      placeholder="Busca una noticia."
-    />
+    <div>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={searchValue}
+        placeholder="Busca una noticia."
+      />
+      <button onClick={handleClear}>X</button>
+    </div>
   );
 };
 

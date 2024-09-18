@@ -20,4 +20,6 @@ export interface INewsApiResponse {
 
 export interface INewsSlice {
   newsData: INewsApiResponse;
+  noResultsObtained: boolean;
+  selectedArticle: IArticle | {};
 }
