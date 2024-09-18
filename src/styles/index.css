@@ -14,6 +14,7 @@
   flex-direction: column; /* Alinea el contenido en columna */
   align-items: center; /* Centra horizontalmente */
   margin-top: 3vh;
+  overflow: auto;
 }
 
 input {

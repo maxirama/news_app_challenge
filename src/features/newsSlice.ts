@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchCount } from "./newsAPI";
-import { INewsSlice } from "../types";
+import { INewsSlice, INewsApiResponse } from "../types";
+import { fetchNews } from "../services/api";
 
 // Define the initial value for the slice state
 const initialState: INewsSlice = {
@@ -11,6 +11,18 @@ const initialState: INewsSlice = {
   },
 };
 
+export const fetchNewsData = createAsyncThunk(
+  "news/fetchNewsData",
+  async (searchValue: string) => {
+    if (searchValue !== "") {
+      const response: INewsApiResponse = await fetchNews(searchValue);
+      return response;
+    } else {
+      throw new Error("Search value cannot be empty");
+    }
+  }
+);
+
 export const newsSlice = createSlice({
   name: "news",
   initialState,
@@ -20,29 +32,24 @@ export const newsSlice = createSlice({
     },
   },
 
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(incrementAsync.pending, (state) => {
-  //       state.status = "loading";
-  //     })
-  //     .addCase(incrementAsync.fulfilled, (state, action) => {
-  //       state.status = "idle";
-  //     })
-  //     .addCase(incrementAsync.rejected, (state) => {
-  //       state.status = "failed";
-  //     });
-  // },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchNewsData.pending, (state) => {
+        state.newsData.status = "loading";
+        console.log("prueba");
+      })
+      .addCase(fetchNewsData.fulfilled, (state, action) => {
+        state.newsData = action.payload;
+        state.newsData.status = "idle";
+        console.log("buena peticion");
+      })
+      .addCase(fetchNewsData.rejected, (state) => {
+        state.newsData.status = "failed";
+        console.log("falló");
+      });
+  },
 });
 
 // Export the generated action creators for use in components
 export const { setNewsData } = newsSlice.actions;
 export default newsSlice.reducer;
-
-export const incrementAsync = createAsyncThunk(
-  "counter/fetchCount",
-  async (amount: number) => {
-    const response = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
-  }
-);

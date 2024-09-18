@@ -6,8 +6,6 @@ import { IArticle } from "../../types";
 
 const Home = () => {
   const newsData = useSelector((state: any) => state.news.newsData);
-  console.log("Home new data.");
-  console.log(newsData);
   return (
     <div>
       <Header />
