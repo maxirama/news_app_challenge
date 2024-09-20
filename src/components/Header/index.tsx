@@ -8,10 +8,16 @@ import Pagination from "../Pagination";
 const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
-  const onNewsSearch = async () => {
+  const handleNewsSearch = async () => {
     if (searchValue !== "") {
       const newsData: any = fetchNewsData(searchValue);
       dispatch(newsData);
+    }
+  };
+
+  const handleKeyDown = (e: any) => {
+    if (e.key === "Enter") {
+      handleNewsSearch();
     }
   };
 
@@ -19,8 +25,12 @@ const Header = () => {
     <header>
       <h1> News App </h1>
       <div>
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-        <SearchButton onNewsSearch={onNewsSearch} />
+        <SearchBar
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          handleKeyDown={handleKeyDown}
+        />
+        <SearchButton onNewsSearch={handleNewsSearch} />
         <Pagination />
       </div>
     </header>

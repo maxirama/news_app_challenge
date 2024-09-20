@@ -1,11 +1,13 @@
 interface SearchBarProps {
   searchValue: string;
   setSearchValue: Function;
+  handleKeyDown: any;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   searchValue,
   setSearchValue,
+  handleKeyDown,
 }) => {
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
@@ -21,6 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <input
         type="text"
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         value={searchValue}
         placeholder="Busca una noticia."
       />
