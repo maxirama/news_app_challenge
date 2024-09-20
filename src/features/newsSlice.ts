@@ -35,11 +35,13 @@ export const newsSlice = createSlice({
     setSelectedArticle: (state, action) => {
       state.selectedArticle = action.payload;
     },
+    clearNewsData: (state) => {
+      state.newsData = initialState.newsData;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNewsData.pending, (state) => {
-        state.noResultsObtained = false;
         state.newsData.status = "loading";
       })
       .addCase(fetchNewsData.fulfilled, (state, action) => {
@@ -57,5 +59,6 @@ export const newsSlice = createSlice({
 });
 
 // Export the generated action creators for use in components
-export const { setNewsData, setSelectedArticle } = newsSlice.actions;
+export const { clearNewsData, setNewsData, setSelectedArticle } =
+  newsSlice.actions;
 export default newsSlice.reducer;

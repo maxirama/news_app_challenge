@@ -28,7 +28,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
-    console.log(searchValue);
   };
 
   const handleClear = () => {
