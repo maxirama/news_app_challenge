@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchNewsData } from "../../features/newsSlice";
 import Pagination from "../Pagination";
 
+
 const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();

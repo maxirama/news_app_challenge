@@ -1,3 +1,6 @@
+import "./styles/index.css";
+import ClearIcon from "../../icons/ClearIcon";
+
 interface SearchBarProps {
   searchValue: string;
   setSearchValue: Function;
@@ -19,15 +22,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <div>
+    <div className="search-input-container">
       <input
+        className="search-input"
         type="text"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         value={searchValue}
         placeholder="Busca una noticia."
       />
-      <button onClick={handleClear}>X</button>
+      <button className="clear-button" onClick={handleClear}>
+        <ClearIcon />
+      </button>
     </div>
   );
 };

@@ -1,0 +1,23 @@
+* {
+    text-decoration: none;
+    color: black;
+    text-align: justify;
+  }
+
+.search-input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: whitesmoke;
+}
+
+.search-input:hover, .search-input:focus {
+    background: white;
+    outline: 1px solid lightgray;
+}
+
