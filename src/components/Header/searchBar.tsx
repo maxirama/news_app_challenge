@@ -1,4 +1,5 @@
 import "./styles/index.css";
+import IconButton from "../IconButton";
 import ClearIcon from "../../icons/Clear";
 import MagnifyingGlassIcon from "../../icons/MagnifyingGlass";
 import { useState } from "react";
@@ -48,15 +49,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
           placeholder="Busca una noticia."
         />
         <div className="search-bar-icon-container">
-          <button className="search-bar-icon" onClick={handleClear}>
-            <ClearIcon />
-          </button>
-          <button className="search-bar-icon" onClick={handleNewsSearch}>
-            <MagnifyingGlassIcon />
-          </button>
+          <IconButton icon={<ClearIcon />} handleClick={handleClear} />
+          <IconButton
+            icon={<MagnifyingGlassIcon />}
+            handleClick={handleNewsSearch}
+          />
         </div>
       </div>
-      {/* {isFocused && <div className="search-input">{"FOCUSEADO"}</div>} */}
+      {isFocused && <div className="search-input">{"FOCUSEADO"}</div>}
     </div>
   );
 };
