@@ -1,6 +1,7 @@
 import "./styles/index.css";
 import ClearIcon from "../../icons/Clear";
 import MagnifyingGlassIcon from "../../icons/MagnifyingGlass";
+import { useState } from "react";
 
 interface SearchBarProps {
   searchValue: string;
@@ -15,6 +16,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
   handleKeyDown,
   handleNewsSearch,
 }) => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = (e: any) => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = (e: any) => {
+    setIsFocused(false);
+  };
+
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
     console.log(searchValue);
@@ -29,11 +40,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <input
         className="search-input"
         type="text"
+        value={searchValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        value={searchValue}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder="Busca una noticia."
       />
+      {isFocused && "FOCUSEADO"}
       <div className="search-bar-icon-container">
         <button className="search-bar-icon" onClick={handleClear}>
           <ClearIcon />

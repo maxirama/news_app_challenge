@@ -2,7 +2,6 @@ import SearchBar from "./searchBar";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchNewsData } from "../../features/newsSlice";
-import Pagination from "../Pagination";
 import "./styles/index.css"
 
 const Header = () => {
@@ -31,7 +30,6 @@ const Header = () => {
           handleKeyDown={handleKeyDown}
           handleNewsSearch={handleNewsSearch}
         />
-        <Pagination />
       </div>
     </header>
   );
