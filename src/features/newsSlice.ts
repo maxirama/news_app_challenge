@@ -37,6 +37,7 @@ export const newsSlice = createSlice({
     },
     clearNewsData: (state) => {
       state.newsData = initialState.newsData;
+      state.noResultsObtained = false;
     },
   },
   extraReducers: (builder) => {

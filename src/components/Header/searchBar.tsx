@@ -56,7 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           </button>
         </div>
       </div>
-      {isFocused && <div className="search-input">{"FOCUSEADO"}</div>}
+      {/* {isFocused && <div className="search-input">{"FOCUSEADO"}</div>} */}
     </div>
   );
 };
