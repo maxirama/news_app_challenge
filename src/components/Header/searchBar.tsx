@@ -38,16 +38,19 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <div>
       <div className="search-input-container">
-        <input
-          className="search-input"
-          type="text"
-          value={searchValue}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder="Busca una noticia."
-        />
+        <div className="input-container">
+          <input
+            className="search-input"
+            type="text"
+            value={searchValue}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder="Busca una noticia."
+          />
+          {/* {true && <div className="search-history-element">{"FOCUSEADO"}</div>} */}
+        </div>
         <div className="search-bar-icon-container">
           <IconButton icon={<ClearIcon />} handleClick={handleClear} />
           <IconButton
@@ -56,7 +59,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
           />
         </div>
       </div>
-      {isFocused && <div className="search-input">{"FOCUSEADO"}</div>}
     </div>
   );
 };
