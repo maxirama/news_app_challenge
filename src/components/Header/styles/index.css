@@ -21,3 +21,18 @@
     outline: 1px solid lightgray;
 }
 
+.search-bar-icon {
+    border: none;
+    background: none;
+    gap: 20px;
+}
+
+.search-bar-icon-container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}

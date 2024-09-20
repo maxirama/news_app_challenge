@@ -1,9 +1,11 @@
 import "./styles/index.css";
-import ClearIcon from "../../icons/ClearIcon";
+import ClearIcon from "../../icons/Clear";
+import MagnifyingGlassIcon from "../../icons/MagnifyingGlass";
 
 interface SearchBarProps {
   searchValue: string;
   setSearchValue: Function;
+  handleNewsSearch: any;
   handleKeyDown: any;
 }
 
@@ -11,6 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   searchValue,
   setSearchValue,
   handleKeyDown,
+  handleNewsSearch,
 }) => {
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
@@ -31,9 +34,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={searchValue}
         placeholder="Busca una noticia."
       />
-      <button className="clear-button" onClick={handleClear}>
-        <ClearIcon />
-      </button>
+      <div className="search-bar-icon-container">
+        <button className="search-bar-icon" onClick={handleClear}>
+          <ClearIcon />
+        </button>
+        <button className="search-bar-icon" onClick={handleNewsSearch}>
+          <MagnifyingGlassIcon />
+        </button>
+      </div>
     </div>
   );
 };
