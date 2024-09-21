@@ -1,9 +1,9 @@
 const Pagination = () => {
   return (
-    <div>
+    <input>
       <button>{"<"}</button>
       <button>{">"}</button>
-    </div>
+    </input>
   );
 };
 

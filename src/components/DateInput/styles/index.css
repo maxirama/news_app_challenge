@@ -1,0 +1,42 @@
+input[type="date"] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  width: 200px;
+}
+
+input[type="date"]::-webkit-input-placeholder {
+  color: #888;
+}
+
+input[type="date"]::-moz-placeholder {
+  color: #888;
+}
+
+input[type="date"]:-ms-input-placeholder {
+  color: #888;
+}
+
+input[type="date"]:-moz-placeholder {
+  color: #888;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+
+input[type="date"]::-webkit-datetime-edit {
+  color: #000;
+}
+
+
+input[type="date"]:hover {
+  border-color: #888;
+}
+
+input[type="date"]:focus {
+  border-color: #333;
+  outline: none;
+}
