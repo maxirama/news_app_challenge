@@ -1,7 +1,16 @@
 import "./styles/index.css";
 
-const DatePicker = () => {
-  return <input type="date"></input>;
+interface IDaterPickerProps {
+  label: string;
+}
+
+const DatePicker: React.FC<IDaterPickerProps> = ({ label }) => {
+  return (
+    <div>
+      <label>{label}</label>
+      <input type="date" />
+    </div>
+  );
 };
 
 export default DatePicker;

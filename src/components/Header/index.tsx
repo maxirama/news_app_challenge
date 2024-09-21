@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchNewsData, clearNewsData } from "../../features/news/newsSlice";
 import "./styles/index.css";
 import FiltersBar from "../FiltersBar";
+import DatePicker from "../DatePicker";
 
 const Header = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -34,6 +35,8 @@ const Header = () => {
         />
         <FiltersBar />
       </div>
+      <DatePicker label="Desde" />
+      <DatePicker label="Hasta" />
     </header>
   );
 };

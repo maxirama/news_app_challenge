@@ -6,7 +6,6 @@ import NewsCard from "../../components/NewsCard";
 import { IArticle } from "../../types";
 import ErrorCard from "../../components/ErrorCard";
 import NoResultsCard from "../../components/NoResultsCard";
-import DatePicker from "../../components/DatePicker";
 
 const Home = () => {
   const newsData = useSelector((state: any) => state.news.newsData);
@@ -17,7 +16,6 @@ const Home = () => {
     <div>
       <Header />
       <div className="home-container">
-        <DatePicker />
         {noResultsObtained === true && <NoResultsCard />}
         {newsData.status === "error" && <ErrorCard />}
         {newsData.status === "loading" && (
