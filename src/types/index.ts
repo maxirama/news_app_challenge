@@ -23,3 +23,7 @@ export interface INewsSlice {
   noResultsObtained: boolean;
   selectedArticle: IArticle | {};
 }
+
+export interface IFiltersSlice {
+  selectedLanguage: string
+}

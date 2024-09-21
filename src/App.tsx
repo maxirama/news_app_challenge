@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 Prevenir random gap.
 Filtros.
 Historial de búsqueda.
+Paginado.
 */
 
 function App() {

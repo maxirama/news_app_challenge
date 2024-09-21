@@ -1,8 +1,9 @@
 import SearchBar from "./searchBar";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchNewsData, clearNewsData } from "../../features/newsSlice";
+import { fetchNewsData, clearNewsData } from "../../features/news/newsSlice";
 import "./styles/index.css";
+import FiltersBar from "../FiltersBar";
 
 const Header = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -31,6 +32,7 @@ const Header = () => {
           handleKeyDown={handleKeyDown}
           handleNewsSearch={handleNewsSearch}
         />
+        <FiltersBar />
       </div>
     </header>
   );

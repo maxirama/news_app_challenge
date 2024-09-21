@@ -36,6 +36,13 @@ input {
   padding: 20px;
 }
 
+.loader-container{
+  background-color: red;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+}
+
 @media (max-width: 1024px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);

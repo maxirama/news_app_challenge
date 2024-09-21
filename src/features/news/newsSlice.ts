@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { INewsSlice, INewsApiResponse } from "../types";
-import { fetchNews } from "../services/api";
+import { INewsSlice, INewsApiResponse } from "../../types";
+import { fetchNews } from "../../services/api";
 
 // Define the initial value for the slice state
 const initialState: INewsSlice = {

@@ -7,4 +7,9 @@
   }
 }
 
+.loader-container{
+  justify-content: center;
+  display: flex;
+}
+
 

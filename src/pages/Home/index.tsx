@@ -18,7 +18,11 @@ const Home = () => {
       <div className="home-container">
         {noResultsObtained === true && <NoResultsCard />}
         {newsData.status === "error" && <ErrorCard />}
-        {newsData.status === "loading" && <Loader />}
+        {newsData.status === "loading" && (
+          <div className="loader-container">
+            <Loader />
+          </div>
+        )}
         <div className="grid-container">
           {newsData.articles.map((article: IArticle) => {
             return <NewsCard article={article} />;
