@@ -1,7 +1,7 @@
 import "./styles/index.css";
 
-const DateInput = () => {
+const DatePicker = () => {
   return <input type="date"></input>;
 };
 
-export default DateInput;
+export default DatePicker;
