@@ -23,6 +23,7 @@ export interface INewsSlice {
   noResultsObtained: boolean;
   selectedArticle: IArticle | {};
   searchValue: string;
+  firstRender: boolean;
 }
 
 export interface IFiltersSlice {

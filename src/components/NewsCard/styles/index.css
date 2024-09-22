@@ -60,7 +60,7 @@
 @media (max-width: 768px) {
   .news-card {
     background-color: whitesmoke;
-    width: 60vw;
+    width: 80vw;
     height: auto;
     padding: 15px;
     display: flex;

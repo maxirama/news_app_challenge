@@ -12,6 +12,7 @@ const initialState: INewsSlice = {
   selectedArticle: {},
   noResultsObtained: false,
   searchValue: "",
+  firstRender: true,
 };
 
 export const fetchNewsData = createAsyncThunk(

@@ -1,12 +1,19 @@
 import React from "react";
 import Pagination from "../Pagination";
+import "./styles/index.css";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const totalResults = useSelector(
+    (state: any) => state.news.newsData.totalResults
+  );
   return (
     <footer>
-      <div className="pagination-container">
-        <Pagination />
-      </div>
+      {totalResults !== 0 && (
+        <div className="pagination-wrapper">
+          <Pagination />
+        </div>
+      )}
     </footer>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./pages/Home";
-import "./styles/index.css";
 import SelectedArticle from "./pages/SelectedArticle";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -13,14 +12,12 @@ Paginado.
 
 function App() {
   return (
-    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article" element={<SelectedArticle />} />
         </Routes>
       </Router>
-    </div>
   );
 }
 

@@ -1,7 +1,7 @@
-.pagination-footer {
+.pagination-container {
   display: flex;
-  gap: 10px; /* Adds space between buttons */
-  justify-content: center; /* Center-align the buttons */
+  gap: 10px; 
+  justify-content: center;
 }
 
 .pagination-footer button {
@@ -21,3 +21,5 @@
   color: white;
   border: none; /* Optional, to remove border on active button */
 }
+
+
