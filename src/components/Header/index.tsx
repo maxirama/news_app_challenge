@@ -41,10 +41,10 @@ const Header = () => {
           handleKeyDown={handleKeyDown}
           handleNewsSearch={handleNewsSearch}
         />
-        <FiltersBar />
+        {/* <FiltersBar /> */}
       </div>
-      <DatePicker label="Desde" />
-      <DatePicker label="Hasta" />
+      {/* <DatePicker label="Desde" />
+      <DatePicker label="Hasta" /> */}
     </header>
   );
 };
