@@ -14,7 +14,7 @@ export const filtersSlice = createSlice({
     },
     clearFilters: (state) => {
       state = initialState;
-    }
+    },
   },
 });
 

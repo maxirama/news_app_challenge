@@ -1,0 +1,23 @@
+.pagination-footer {
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+  justify-content: center; /* Center-align the buttons */
+}
+
+.pagination-footer button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes the buttons circular */
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the number inside the button */
+}
+
+.pagination-footer button.active {
+  background-color: blue;
+  color: white;
+  border: none; /* Optional, to remove border on active button */
+}

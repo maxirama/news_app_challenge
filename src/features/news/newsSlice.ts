@@ -11,6 +11,7 @@ const initialState: INewsSlice = {
   },
   selectedArticle: {},
   noResultsObtained: false,
+  searchValue: "",
 };
 
 export const fetchNewsData = createAsyncThunk(
@@ -34,6 +35,9 @@ export const newsSlice = createSlice({
     },
     setSelectedArticle: (state, action) => {
       state.selectedArticle = action.payload;
+    },
+    setSearchValue: (state, action) => {
+      state.searchValue = action.payload;
     },
     clearNewsData: (state) => {
       state.newsData = initialState.newsData;
@@ -60,6 +64,10 @@ export const newsSlice = createSlice({
 });
 
 // Export the generated action creators for use in components
-export const { clearNewsData, setNewsData, setSelectedArticle } =
-  newsSlice.actions;
+export const {
+  clearNewsData,
+  setNewsData,
+  setSelectedArticle,
+  setSearchValue,
+} = newsSlice.actions;
 export default newsSlice.reducer;

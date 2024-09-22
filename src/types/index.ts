@@ -22,8 +22,9 @@ export interface INewsSlice {
   newsData: INewsApiResponse;
   noResultsObtained: boolean;
   selectedArticle: IArticle | {};
+  searchValue: string;
 }
 
 export interface IFiltersSlice {
-  selectedLanguage: string
+  selectedLanguage: string;
 }

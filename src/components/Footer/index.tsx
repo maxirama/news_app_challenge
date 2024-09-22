@@ -1,10 +1,11 @@
 import React from "react";
+import Pagination from "../Pagination";
 
 const Footer = () => {
   return (
     <footer>
-      <div>
-        <p> "Footer" </p>
+      <div className="pagination-container">
+        <Pagination />
       </div>
     </footer>
   );
