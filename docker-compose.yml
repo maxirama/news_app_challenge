@@ -1,0 +1,13 @@
+version: "3"
+services:
+  my-react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80" # Map port 80 inside the container to port 3000 on your host
+    environment:
+      - REACT_APP_NEWS_API_KEY=${REACT_APP_NEWS_API_KEY}
+      - REACT_APP_NEWS_API=${REACT_APP_NEWS_API}
+    env_file:
+      - .env # Optional: If you store environment variables in a .env file

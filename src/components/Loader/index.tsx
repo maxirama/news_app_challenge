@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader: React.FC = () => {
   return (
-    <div className="loader-container">
+    <div className="loader-div">
       <svg
         width="50px"
         height="50px"

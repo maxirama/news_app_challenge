@@ -37,7 +37,6 @@ input {
 }
 
 .loader-container{
-  background-color: red;
   display: flex;
   height: 50vh;
   justify-content: center;

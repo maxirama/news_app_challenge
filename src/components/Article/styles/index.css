@@ -1,0 +1,11 @@
+.article-container {
+  max-width: 1024px;
+  max-height: auto;
+}
+
+
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

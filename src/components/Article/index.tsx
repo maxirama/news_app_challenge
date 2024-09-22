@@ -1,4 +1,5 @@
 import { IArticle } from "../../types";
+import "./styles/index.css";
 
 interface ArticleProps {
   article: IArticle;
@@ -6,11 +7,17 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = ({ article }) => {
   return (
-    <div>
+    <div className="article-container">
       <h1>{`${article.title}`}</h1>
       <p>Por: {` ${article.description}`}</p>
-      <img src={`${article.urlToImage}`} alt="Descripción de la imagen." />
-      <p>{`${article.description} : ${article.publishedAt}`}</p>
+      <div className="img-container">
+        <img
+          className="article-image"
+          src={`${article.urlToImage}`}
+          alt="Descripción de la imagen."
+        />
+      </div>
+      <p>{`${article.content} : ${article.publishedAt}`}</p>
     </div>
   );
 };
