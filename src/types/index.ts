@@ -29,3 +29,8 @@ export interface INewsSlice {
 export interface IFiltersSlice {
   selectedLanguage: string;
 }
+
+export interface IPaginationSlice {
+  currentPage: number;
+  currentPageRange: any[];
+}

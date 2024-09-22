@@ -1,10 +1,10 @@
 .pagination-wrapper {
-    position: fixed;
-    bottom: 0; /* Stick to the bottom of the page */
-    left: 50%; /* Move the element horizontally to the center */
-    transform: translateX(-50%); /* Offset it back to truly center it */
-    width: 100%; /* Optional, depends on your design */
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px;
-  }
+  position: fixed;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #f0f2f3;
+}

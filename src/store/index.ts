@@ -2,11 +2,13 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "../features/news/newsSlice";
 import filtersReducer from "../features/filters/filtersSlice";
+import paginationReducer from "../features/pagination/paginationSlice";
 
 export const store = configureStore({
   reducer: {
     news: newsReducer,
     filters: filtersReducer,
+    pagination: paginationReducer,
   },
 });
 
