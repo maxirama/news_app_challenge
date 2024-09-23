@@ -5,13 +5,13 @@ import {
   clearNewsData,
   setSearchValue,
 } from "../../features/news/newsSlice";
+import { setCurrentPage } from "../../features/pagination/paginationSlice";
 import "./styles/index.css";
 import FiltersBar from "../FiltersBar";
-import DatePicker from "../DatePicker";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const searchValue = useSelector((state: any) => state.news.searchValue);
+  const { firstRender, searchValue } = useSelector((state: any) => state.news);
 
   const _setSearchValue = (value: string) => {
     dispatch(setSearchValue(value));
@@ -22,6 +22,7 @@ const Header = () => {
       dispatch(clearNewsData());
       const newsData: any = fetchNewsData(searchValue);
       dispatch(newsData);
+      dispatch(setCurrentPage(1));
     }
   };
 

@@ -32,5 +32,7 @@ export interface IFiltersSlice {
 
 export interface IPaginationSlice {
   currentPage: number;
-  currentPageRange: any[];
+  currentStartPage: number;
+  currentEndPage: number;
+  currentPageRange: number[];
 }
