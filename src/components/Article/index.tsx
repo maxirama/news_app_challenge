@@ -12,16 +12,16 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
   return (
     <div className="article-container">
       <h1>{`${article.title}`}</h1>
-      <p className="news-author">Por: {` ${article.description}`}</p>
+      <p className="news-author">Por: {` ${article.author}`}</p>
       <div className="img-container">
         <img
-          className="card-img"
+          className="article-img"
           src={`${article.urlToImage}`}
           alt="Descripción de la imagen."
         />
       </div>
-      <p>{`${article.content}`} </p>
-      <p>{`Fecha: ${formattedDate}`}</p>
+      <p className="article-content">{`${article.content}`} </p>
+      <p className="article-date">{`Fecha: ${formattedDate}`}</p>
     </div>
   );
 };

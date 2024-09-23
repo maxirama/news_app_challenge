@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import Article from "../../components/Article";
+import "./styles/index.css"
 
 const SelectedArticle = () => {
   const selectedArticle = useSelector(

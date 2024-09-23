@@ -2,9 +2,9 @@
   background-color: lightgray;
   width: 100%;
   min-height: 100vh;
-  height: auto;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
