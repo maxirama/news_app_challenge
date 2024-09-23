@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IPaginationSlice } from "../../types";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { setStartPage, setEndPage } from "../../components/Pagination/utils";
 
 const initialState: IPaginationSlice = {
   currentPage: 0,
@@ -29,7 +31,20 @@ export const paginationSlice = createSlice({
       state.totalPages = action.payload;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(setActualPage.fulfilled, (state, action) => {
+      state.currentStartPage = setStartPage(state.currentPage);
+      state.currentEndPage = setEndPage(state.currentPage, state.totalPages);
+    });
+  },
 });
+
+export const setActualPage = createAsyncThunk(
+  "pagination/setCurrentPagination",
+  async (page: number) => {
+    setCurrentPage(page);
+  }
+);
 
 export const {
   setCurrentPage,
