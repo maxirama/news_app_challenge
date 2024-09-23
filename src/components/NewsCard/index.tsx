@@ -1,6 +1,6 @@
 import { IArticle } from "../../types";
 import "./styles/index.css";
-import { setSelectedArticle } from "../../features/newsSlice";
+import { setSelectedArticle } from "../../features/news/newsSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

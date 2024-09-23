@@ -22,4 +22,18 @@ export interface INewsSlice {
   newsData: INewsApiResponse;
   noResultsObtained: boolean;
   selectedArticle: IArticle | {};
+  searchValue: string;
+  firstRender: boolean;
+}
+
+export interface IFiltersSlice {
+  selectedLanguage: string;
+}
+
+export interface IPaginationSlice {
+  currentPage: number;
+  currentStartPage: number;
+  currentEndPage: number;
+  currentPageRange: number[];
+  totalPages: number;
 }

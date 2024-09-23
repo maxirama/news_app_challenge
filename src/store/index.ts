@@ -1,22 +1,26 @@
-import type { Action, ThunkAction } from "@reduxjs/toolkit"
-import { configureStore } from "@reduxjs/toolkit"
-import newsReducer from "../features/newsSlice"
+import type { Action, ThunkAction } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import newsReducer from "../features/news/newsSlice";
+import filtersReducer from "../features/filters/filtersSlice";
+import paginationReducer from "../features/pagination/paginationSlice";
 
 export const store = configureStore({
   reducer: {
     news: newsReducer,
+    filters: filtersReducer,
+    pagination: paginationReducer,
   },
-})
+});
 
 // Infer the type of `store`
-export type AppStore = typeof store
-export type RootState = ReturnType<AppStore["getState"]>
+export type AppStore = typeof store;
+export type RootState = ReturnType<AppStore["getState"]>;
 // Infer the `AppDispatch` type from the store itself
-export type AppDispatch = AppStore["dispatch"]
+export type AppDispatch = AppStore["dispatch"];
 // Define a reusable type describing thunk functions
 export type AppThunk<ThunkReturnType = void> = ThunkAction<
   ThunkReturnType,
   RootState,
   unknown,
   Action
->
+>;

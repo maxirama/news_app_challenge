@@ -1,16 +1,26 @@
 import SearchBar from "./searchBar";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchNewsData, clearNewsData } from "../../features/newsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchNewsData,
+  clearNewsData,
+  setSearchValue,
+} from "../../features/news/newsSlice";
+import { setCurrentPage } from "../../features/pagination/paginationSlice";
 import "./styles/index.css";
 
 const Header = () => {
-  const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
+  const { firstRender, searchValue } = useSelector((state: any) => state.news);
+
+  const _setSearchValue = (value: string) => {
+    dispatch(setSearchValue(value));
+  };
+
   const handleNewsSearch = async () => {
     if (searchValue !== "") {
       dispatch(clearNewsData());
       const newsData: any = fetchNewsData(searchValue);
+      setCurrentPage(1);
       dispatch(newsData);
     }
   };
@@ -27,11 +37,14 @@ const Header = () => {
       <div>
         <SearchBar
           searchValue={searchValue}
-          setSearchValue={setSearchValue}
+          setSearchValue={_setSearchValue}
           handleKeyDown={handleKeyDown}
           handleNewsSearch={handleNewsSearch}
         />
+        {/* <FiltersBar /> */}
       </div>
+      {/* <DatePicker label="Desde" />
+      <DatePicker label="Hasta" /> */}
     </header>
   );
 };
