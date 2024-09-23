@@ -6,7 +6,7 @@ const SelectedArticle = () => {
     (state: any) => state.news.selectedArticle
   );
   return (
-    <div>
+    <div className="article-page-container">
       <Article article={selectedArticle} />
     </div>
   );

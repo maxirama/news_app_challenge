@@ -1,11 +1,11 @@
 .article-container {
   max-width: 1024px;
   max-height: auto;
+  padding: 5vw;
 }
 
-
 .img-container {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
 }
