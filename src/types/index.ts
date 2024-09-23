@@ -35,4 +35,5 @@ export interface IPaginationSlice {
   currentStartPage: number;
   currentEndPage: number;
   currentPageRange: number[];
+  totalPages: number;
 }

@@ -5,7 +5,10 @@ import {
   clearNewsData,
   setSearchValue,
 } from "../../features/news/newsSlice";
-import { setCurrentPage } from "../../features/pagination/paginationSlice";
+import {
+  setCurrentEndPage,
+  setCurrentPage,
+} from "../../features/pagination/paginationSlice";
 import "./styles/index.css";
 import FiltersBar from "../FiltersBar";
 
@@ -22,7 +25,6 @@ const Header = () => {
       dispatch(clearNewsData());
       const newsData: any = fetchNewsData(searchValue);
       dispatch(newsData);
-      dispatch(setCurrentPage(1));
     }
   };
 

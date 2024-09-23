@@ -6,6 +6,7 @@ const initialState: IPaginationSlice = {
   currentStartPage: 1,
   currentEndPage: 1,
   currentPageRange: [],
+  totalPages: 1,
 };
 
 export const paginationSlice = createSlice({
@@ -24,6 +25,9 @@ export const paginationSlice = createSlice({
     setCurrentPageRange: (state, action) => {
       state.currentPageRange = action.payload;
     },
+    setTotalPages: (state, action) => {
+      state.totalPages = action.payload;
+    },
   },
 });
 
@@ -32,6 +36,7 @@ export const {
   setCurrentStartPage,
   setCurrentEndPage,
   setCurrentPageRange,
+  setTotalPages,
 } = paginationSlice.actions;
 
 export default paginationSlice.reducer;
